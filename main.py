@@ -23,4 +23,28 @@ print("L1:",L1)
 2.3.    Solicite al usuario la introducción de una cadena y muestre el resultado de su cifrado. La cadena resultante siempre estará en minúsculas.
         Ejemplo: Si el usuario introduce "Hola", la cadena resultante será "h3l0" (1 Pto.)
 """
+# Ejercicio 2.1
+dicc = {'a': 0, 'e': 1, 'i': 2, 'o': 3, 'u': 4}
 
+# Ejercicio 2.2
+valorMaximo = dicc.get(max(dicc.keys()))
+print(valorMaximo)
+
+# Ejercicio 2.3
+cad = "pepe"
+
+resultado1 = ""
+resultado2 = ""
+for c in cad.lower():
+    try:
+        pos = "aeiou".index(c)
+        resultado1 += str(dicc.get(c))
+    except ValueError:
+        resultado1 += c
+
+    if (c in "aeiouAEIOU"):
+        c = dicc.get(c)
+    resultado2 += str(c)
+
+print(resultado1)
+print(resultado2)
